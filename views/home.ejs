@@ -1,0 +1,24 @@
+<%- include('partials/header');%>
+
+        <h1>Home</h1>
+
+        <p>
+            <%= homeStartingContent %>
+        </p>
+
+        <h2>posts</h2>
+
+        <% posts.forEach(function(post){ %>
+            <div class="post">
+                <h1><%= post.title %></h1>
+                <p><%= post.content.substring(0,100) + "..." %></p>
+                <!-- add a link to the post using lodash -->
+                <a href="/posts/<%= post._id %>"> Read More</a>
+            </div>
+        <% }) %>
+        
+        <a href="/compose" class="btn btn-primary">Create post</a>
+
+
+    <%- include('partials/footer'); %>
+
